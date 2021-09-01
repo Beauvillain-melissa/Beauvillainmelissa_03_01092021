@@ -1,0 +1,111 @@
+@font-face {
+  font-family: shrikhand;
+  src: url(font/Shrikhand-Regular.ttf);
+}
+
+@font-face {
+  font-family: roboto;
+  src: url(font/Roboto-Regular.ttf);
+}
+
+@font-face {
+  font-family: roboto-black;
+  src: url(font/Roboto-Black.ttf);
+}
+
+header {
+  position: relative;
+  padding: 0px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  font-family: roboto;
+}
+
+header .fas {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  position: relative;
+  bottom: 30px;
+  font-size: 20px;
+  padding-left: 20px;
+}
+
+header h1 {
+  margin: 0;
+  font-family: shrikhand;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  margin: 0px;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+}
+
+#conteneur-menu {
+  background-color: #F2F2F2;
+  border-radius: 45px 45px 0px 0px;
+  margin-top: -55px;
+  position: relative;
+  padding-left: 20px;
+}
+
+#conteneur-menu h2 {
+  font-family: shrikhand;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  margin: 0px;
+  padding-top: 35px;
+  font-size: 27px;
+}
+
+#conteneur-menu .far {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  position: relative;
+  bottom: 35px;
+  color: gray;
+  font-size: 30px;
+  padding-right: 30px;
+}
+
+#conteneur-menu .menu {
+  background-color: white;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+#conteneur-menu .prix {
+  background-color: white;
+}
+/*# sourceMappingURL=menuresto.css.map */
