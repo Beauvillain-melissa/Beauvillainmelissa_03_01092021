@@ -67,29 +67,47 @@ body
     display: flex;
     justify-content: center;
 
-    h2 {
+    h2 
+    {
         margin-top: 0px;
         margin-bottom: 20px;
         font-family: $policeTexte;
+        margin-left: 50px;
+        margin-right: 50px;
+        
+    }
+    p
+    {
+        margin-top: 15px;
+        margin-bottom: 30px;
+        font-family: $policeTexte;
+        background-color: "F2F2F2";
+        margin-left: 50px;
+        margin-right: 50px;
+
     }
 }
-#conteneur-description p
-{
-    margin-top: 15px;
-    margin-bottom: 30px;
-    font-family: $policeTexte;
-    background-color: "F2F2F2";
-}
+ 
+
 .rechercher
 {
     background-color:#a5498b ;
     color: white;
     border-radius: 30px;
-    padding: 15px;
+    padding: 15px 20px  15px 20px;
     font-size: 20px;
     box-shadow: 4px 4px 4px #808080a8;
     border: none;
     background: linear-gradient(#FF79DA,$couleur-violet);
+    transform: scale(1);
+    transition: transform 400ms;
+    transition-duration: 200ms;
+    
+    &:hover
+    {
+        transform: scale(1.15);
+    }
+    
 }
 #conteneur-fonctionnement
 {
@@ -158,6 +176,8 @@ body
             position: absolute;
             right: 40px;
             top: 30px;
+            font-weight: bold;
+            font-family: $policeTexte;
             
         }
     }
@@ -179,6 +199,7 @@ body
     font-family: $policeTexte;
     color: black;
     flex-direction: column;
+    padding-left: 10px;
 
     h3 {
         margin: 0;
@@ -193,7 +214,7 @@ body
         padding-bottom: 17px;
     }
 }
-.far
+.far 
 {
     display: flex;
     padding: 10px;
@@ -203,9 +224,9 @@ body
     cursor: pointer;
     &:hover
     {
-        /*color: #FF79DA;*/
-        background-color: #FF79DA;
-        ;
+        color: #FF79DA;
+        transition:400ms;
+        font-weight: 900;
     }
 } 
     
@@ -242,3 +263,4 @@ body
         padding-left: 25px;
     }
 }
+

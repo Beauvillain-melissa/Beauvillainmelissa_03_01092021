@@ -80,6 +80,8 @@ body {
   margin-top: 0px;
   margin-bottom: 20px;
   font-family: roboto;
+  margin-left: 50px;
+  margin-right: 50px;
 }
 
 #conteneur-description p {
@@ -87,19 +89,34 @@ body {
   margin-bottom: 30px;
   font-family: roboto;
   background-color: "F2F2F2";
+  margin-left: 50px;
+  margin-right: 50px;
 }
 
 .rechercher {
   background-color: #a5498b;
   color: white;
   border-radius: 30px;
-  padding: 15px;
+  padding: 15px 20px  15px 20px;
   font-size: 20px;
   -webkit-box-shadow: 4px 4px 4px #808080a8;
           box-shadow: 4px 4px 4px #808080a8;
   border: none;
   background: -webkit-gradient(linear, left top, left bottom, from(#FF79DA), to(#9356DC));
   background: linear-gradient(#FF79DA, #9356DC);
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  -webkit-transition: -webkit-transform 400ms;
+  transition: -webkit-transform 400ms;
+  transition: transform 400ms;
+  transition: transform 400ms, -webkit-transform 400ms;
+  -webkit-transition-duration: 200ms;
+          transition-duration: 200ms;
+}
+
+.rechercher:hover {
+  -webkit-transform: scale(1.15);
+          transform: scale(1.15);
 }
 
 #conteneur-fonctionnement {
@@ -182,6 +199,8 @@ body {
   position: absolute;
   right: 40px;
   top: 30px;
+  font-weight: bold;
+  font-family: roboto;
 }
 
 .carte-resto img {
@@ -207,6 +226,7 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  padding-left: 10px;
 }
 
 .description h3 {
@@ -235,8 +255,10 @@ body {
 }
 
 .far:hover {
-  /*color: #FF79DA;*/
-  background-color: #FF79DA;
+  color: #FF79DA;
+  -webkit-transition: 400ms;
+  transition: 400ms;
+  font-weight: 900;
 }
 
 .pied-de-page {
