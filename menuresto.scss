@@ -21,6 +21,7 @@ header
     display: flex;
     flex-direction: column;
     font-family: $policeTexte;
+    
     .fas
     {
         display: flex;
@@ -30,6 +31,7 @@ header
         font-size: 20px;
         padding-left: 20px;
         color: black;
+        
       a
       {
           text-decoration: none;
@@ -48,6 +50,7 @@ header
 body
 {
     margin: 0px;
+    
 }
 .image
 {
@@ -61,7 +64,7 @@ body
     border-radius: 45px 45px 0px 0px;
     transform: translateY(-70px);
     position: relative;
-    padding-left: 20px;
+    padding: 20px;
     .titre-resto
     {
         display: flex;
@@ -95,66 +98,99 @@ body
         background-color: white;
         justify-content: space-between;
         border-radius: 10px 0px 0px 10px;
+       
         
         p
         {
-            margin: 0px 0px 0px 10px;
+            margin: 0px;
             font-family: $policeTexte;
-
+           
         }
     }
+}  
     .menu-entree 
     {
         display: flex;
         flex-direction: column;
+       
+
+       
         h4
         {
-            margin-left: 10px;
+            
             margin-top: 10px;
             margin-bottom:0px ;
             font-family: roboto ;
+            padding-bottom: 5px;
         }
         h3
         {
-            font-family: $policeTitre;
+            font-family: $policeTexte;
+           
+
         }
         .carte-entree
         {
             display: flex;
+            margin-bottom: 15px;
+            ;
+    
+           
             .element-entree
             {
                 background-color: white;
                 flex-direction: column;
                 display: flex;
-                margin-bottom: 15px;
                 flex: 1;
-                border-radius: 10px 0px 0px 10px;
+                border-radius: 10px 10px 10px 10px;
+                padding: 10px;
+                padding-top: 0px;
+                box-shadow: 2px 4px 2px lightgray;
+                overflow: hidden;
+                cursor: pointer;
+                &:hover
+                {
+                    border-radius: 10px 0px 0px 10px;
+                }
             }
-            .bouton-entree{
+            .bouton-entree
+            {
                 background: #99e2d0;
                 align-items: center;
                 display: flex;
                 justify-content: center;
-                margin-right: -6rem;
-                width: 6rem;
+                margin-right: -7rem;
+                width: 7rem;
                 transition-duration: 0.5s;
 	            transition-timing-function: ease;
                 border-radius: 0px 10px 10px 0px;
-                i {
+                opacity: 0;
+                box-shadow: 2px 4px 2px lightgray;
+               
+               
+                i 
+                {
                     background: #F2F2F2;
                     padding: 0.5rem;
                     color: #99e2d0;
                     border-radius: 50%;
                 }
             }
-            .element-entree:hover + .bouton-entree{
+            .element-entree:hover + .bouton-entree
+            {
                 margin-right: 0;
                 transition-duration: 0.5s;
                 transition-timing-function: ease;
+                opacity: 1;
+                
+                
+               
             }
-            .element-entree:hover + .bouton-entree i{
+            .element-entree:hover + .bouton-entree i
+            {
                 transform: rotate(360deg);
 	            transition-duration: 0.5s;
+                
             }
         }
     }
@@ -165,25 +201,25 @@ body
     margin: 30px;
 
   .commander
- {
-    background-color:#a5498b ;
-    color: white;
-    border-radius: 30px;
-    padding: 15px 30px  15px 30px;
-    font-size: 20px;
-    box-shadow: 4px 4px 4px #808080a8;
-    border: none;
-    background: linear-gradient(#FF79DA,$couleur-violet);
-    transform: scale(1);
-    transition: transform 400ms;
-    transition-duration: 200ms;
-        &:hover
-        {
-            transform: scale(1.15);
-        }
- }
+    {
+        background-color:#a5498b ;
+        color: white;
+        border-radius: 30px;
+        padding: 15px 30px  15px 30px;
+        font-size: 20px;
+        box-shadow: 4px 4px 4px #808080a8;
+        border: none;
+        background: linear-gradient(#FF79DA,$couleur-violet);
+        transform: scale(1);
+        transition: transform 400ms;
+        transition-duration: 200ms;
+             &:hover
+            {
+                transform: scale(1.15);
+            }
+    }
 }  
-}
+
 .pied-de-page
 {
     color: white;
@@ -203,7 +239,7 @@ body
         text-decoration: none;
         font-family: roboto;
     }
-    :hover
+    
 
     .fas
     {

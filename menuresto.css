@@ -67,7 +67,7 @@ body {
   -webkit-transform: translateY(-70px);
           transform: translateY(-70px);
   position: relative;
-  padding-left: 20px;
+  padding: 20px;
 }
 
 #conteneur-menu .titre-resto {
@@ -112,11 +112,11 @@ body {
 }
 
 #conteneur-menu .prix p {
-  margin: 0px 0px 0px 10px;
+  margin: 0px;
   font-family: roboto;
 }
 
-#conteneur-menu .menu-entree {
+.menu-entree {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -126,24 +126,25 @@ body {
           flex-direction: column;
 }
 
-#conteneur-menu .menu-entree h4 {
-  margin-left: 10px;
+.menu-entree h4 {
   margin-top: 10px;
   margin-bottom: 0px;
   font-family: roboto;
+  padding-bottom: 5px;
 }
 
-#conteneur-menu .menu-entree h3 {
-  font-family: shrikhand;
+.menu-entree h3 {
+  font-family: roboto;
 }
 
-#conteneur-menu .menu-entree .carte-entree {
+.menu-entree .carte-entree {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  margin-bottom: 15px;
 }
 
-#conteneur-menu .menu-entree .carte-entree .element-entree {
+.menu-entree .carte-entree .element-entree {
   background-color: white;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
@@ -152,14 +153,23 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  margin-bottom: 15px;
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
+  border-radius: 10px 10px 10px 10px;
+  padding: 10px;
+  padding-top: 0px;
+  -webkit-box-shadow: 2px 4px 2px lightgray;
+          box-shadow: 2px 4px 2px lightgray;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.menu-entree .carte-entree .element-entree:hover {
   border-radius: 10px 0px 0px 10px;
 }
 
-#conteneur-menu .menu-entree .carte-entree .bouton-entree {
+.menu-entree .carte-entree .bouton-entree {
   background: #99e2d0;
   -webkit-box-align: center;
       -ms-flex-align: center;
@@ -170,38 +180,42 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  margin-right: -6rem;
-  width: 6rem;
+  margin-right: -7rem;
+  width: 7rem;
   -webkit-transition-duration: 0.5s;
           transition-duration: 0.5s;
   -webkit-transition-timing-function: ease;
           transition-timing-function: ease;
   border-radius: 0px 10px 10px 0px;
+  opacity: 0;
+  -webkit-box-shadow: 2px 4px 2px lightgray;
+          box-shadow: 2px 4px 2px lightgray;
 }
 
-#conteneur-menu .menu-entree .carte-entree .bouton-entree i {
+.menu-entree .carte-entree .bouton-entree i {
   background: #F2F2F2;
   padding: 0.5rem;
   color: #99e2d0;
   border-radius: 50%;
 }
 
-#conteneur-menu .menu-entree .carte-entree .element-entree:hover + .bouton-entree {
+.menu-entree .carte-entree .element-entree:hover + .bouton-entree {
   margin-right: 0;
   -webkit-transition-duration: 0.5s;
           transition-duration: 0.5s;
   -webkit-transition-timing-function: ease;
           transition-timing-function: ease;
+  opacity: 1;
 }
 
-#conteneur-menu .menu-entree .carte-entree .element-entree:hover + .bouton-entree i {
+.menu-entree .carte-entree .element-entree:hover + .bouton-entree i {
   -webkit-transform: rotate(360deg);
           transform: rotate(360deg);
   -webkit-transition-duration: 0.5s;
           transition-duration: 0.5s;
 }
 
-#conteneur-menu .bouton-commander {
+.bouton-commander {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -211,7 +225,7 @@ body {
   margin: 30px;
 }
 
-#conteneur-menu .bouton-commander .commander {
+.bouton-commander .commander {
   background-color: #a5498b;
   color: white;
   border-radius: 30px;
@@ -232,7 +246,7 @@ body {
           transition-duration: 200ms;
 }
 
-#conteneur-menu .bouton-commander .commander:hover {
+.bouton-commander .commander:hover {
   -webkit-transform: scale(1.15);
           transform: scale(1.15);
 }
@@ -256,8 +270,7 @@ body {
   font-family: roboto;
 }
 
-.pied-de-page :hover
-.fas {
+.pied-de-page .fas {
   margin-right: 10px;
 }
 
