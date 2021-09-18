@@ -40,7 +40,7 @@ header .fas {
   color: black;
 }
 
-header .fas a {
+header a {
   text-decoration: none;
 }
 
@@ -48,12 +48,11 @@ header h1 {
   margin: 0;
   font-family: shrikhand;
   text-align: center;
-  width: 100%;
-  height: 100%;
 }
 
 body {
   margin: 0px;
+  overflow-x: hidden;
 }
 
 .image {
@@ -64,8 +63,8 @@ body {
 #conteneur-menu {
   background-color: #F2F2F2;
   border-radius: 45px 45px 0px 0px;
-  -webkit-transform: translateY(-70px);
-          transform: translateY(-70px);
+  -webkit-transform: translateY(-50px);
+          transform: translateY(-50px);
   position: relative;
   padding: 20px;
 }
@@ -79,24 +78,31 @@ body {
           justify-content: space-between;
 }
 
+#conteneur-menu .titre-plat h3 {
+  font-family: roboto;
+  font-weight: 300;
+}
+
 #conteneur-menu h2 {
   font-family: shrikhand;
   margin: 0px;
-  padding-top: 35px;
+  padding-top: 5px;
   font-size: 27px;
 }
 
 #conteneur-menu .far {
   color: gray;
   font-size: 30px;
-  padding-right: 30px;
-  margin-top: 35px;
+  padding-right: 15px;
+  margin-top: 10px;
 }
 
 #conteneur-menu .far:hover {
   -webkit-transition: 400ms;
   transition: 400ms;
   color: #FF79DA;
+  -webkit-transition-duration: 2s;
+          transition-duration: 2s;
   font-weight: 900;
 }
 
@@ -133,10 +139,6 @@ body {
   padding-bottom: 5px;
 }
 
-.menu-entree h3 {
-  font-family: roboto;
-}
-
 .menu-entree .carte-entree {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -167,6 +169,12 @@ body {
 
 .menu-entree .carte-entree .element-entree:hover {
   border-radius: 10px 0px 0px 10px;
+}
+
+.menu-entree .carte-entree .element-entree .prix p {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
 }
 
 .menu-entree .carte-entree .bouton-entree {
@@ -254,6 +262,7 @@ body {
 .pied-de-page {
   color: white;
   background-color: #353535;
+  padding-bottom: 30px;
 }
 
 .pied-de-page h3 {
@@ -271,7 +280,8 @@ body {
 }
 
 .pied-de-page .fas {
-  margin-right: 10px;
+  margin-right: 5px;
+  font-size: 12px;
 }
 
 .pied-de-page .navigation {
