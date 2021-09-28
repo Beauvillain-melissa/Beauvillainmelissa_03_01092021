@@ -52,7 +52,6 @@ body
     text-align: center;
     padding: 20px;
     font-family: $policeTexte;
-    
 }
 .fa-map-marker-alt
 {
@@ -106,6 +105,8 @@ body
     &:hover
     {
         transform: scale(1.15);
+        box-shadow: 5px 5px 5px gray;
+        filter: brightness(110%);
     }
     
 }
@@ -222,10 +223,11 @@ body
     font-size: 35px;
     align-self: flex-end;
     cursor: pointer;
+    transition: 400ms;
     &:hover
     {
         color: #FF79DA;
-        transition:400ms;
+        transition: 700ms;
         font-weight: 900;
     }
 } 

@@ -1,16 +1,36 @@
 @font-face {
   font-family: shrikhand;
-  src: url(font/Shrikhand-Regular.ttf);
+  src: url(../font/Shrikhand-Regular.ttf);
 }
 
 @font-face {
   font-family: roboto;
-  src: url(font/Roboto-Regular.ttf);
+  src: url(../font/Roboto-Regular.ttf);
 }
 
 @font-face {
   font-family: roboto-black;
-  src: url(font/Roboto-Black.ttf);
+  src: url(../font/Roboto-Black.ttf);
+}
+
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    visibility: visible;
+    opacity: 1;
+  }
 }
 
 header {
@@ -60,6 +80,64 @@ body {
   height: 100%;
 }
 
+.carte:nth-child(1n) {
+  -webkit-animation-delay: 0.3s;
+          animation-delay: 0.3s;
+}
+
+.carte:nth-child(2n) {
+  -webkit-animation-delay: 0.6s;
+          animation-delay: 0.6s;
+}
+
+.carte:nth-child(3n) {
+  -webkit-animation-delay: 0.9s;
+          animation-delay: 0.9s;
+}
+
+.carte:nth-child(4n) {
+  -webkit-animation-delay: 1.2s;
+          animation-delay: 1.2s;
+}
+
+.carte:nth-child(5n) {
+  -webkit-animation-delay: 1.5s;
+          animation-delay: 1.5s;
+}
+
+.carte:nth-child(6n) {
+  -webkit-animation-delay: 1.8s;
+          animation-delay: 1.8s;
+}
+
+.carte:nth-child(7n) {
+  -webkit-animation-delay: 2.1s;
+          animation-delay: 2.1s;
+}
+
+.carte:nth-child(8n) {
+  -webkit-animation-delay: 2.4s;
+          animation-delay: 2.4s;
+}
+
+.carte:nth-child(9n) {
+  -webkit-animation-delay: 2.7s;
+          animation-delay: 2.7s;
+}
+
+.carte:nth-child(10n) {
+  -webkit-animation-delay: 3s;
+          animation-delay: 3s;
+}
+
+.carte {
+  visibility: hidden;
+  -webkit-animation: 0.5s fadeIn;
+          animation: 0.5s fadeIn;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
 #conteneur-menu {
   background-color: #F2F2F2;
   border-radius: 45px 45px 0px 0px;
@@ -78,7 +156,7 @@ body {
           justify-content: space-between;
 }
 
-#conteneur-menu .titre-plat h3 {
+#conteneur-menu .titre h3 {
   font-family: roboto;
   font-weight: 300;
 }
@@ -95,14 +173,16 @@ body {
   font-size: 30px;
   padding-right: 15px;
   margin-top: 10px;
+  -webkit-transition: 400ms, -webkit-transform;
+  transition: 400ms, -webkit-transform;
+  transition: transform, 400ms;
+  transition: transform, 400ms, -webkit-transform;
 }
 
 #conteneur-menu .far:hover {
-  -webkit-transition: 400ms;
-  transition: 400ms;
+  -webkit-transition: 700ms;
+  transition: 700ms;
   color: #FF79DA;
-  -webkit-transition-duration: 2s;
-          transition-duration: 2s;
   font-weight: 900;
 }
 
@@ -122,7 +202,7 @@ body {
   font-family: roboto;
 }
 
-.menu-entree {
+#conteneur-menu .menu {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -132,21 +212,62 @@ body {
           flex-direction: column;
 }
 
-.menu-entree h4 {
+#conteneur-menu .menu .input-menu {
+  display: none;
+}
+
+#conteneur-menu .menu .input-menu:checked + label .bouton-carte {
+  width: 20%;
+  opacity: 1;
+}
+
+#conteneur-menu .menu .input-menu:checked + label .element-carte {
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+
+#conteneur-menu .menu .input-menu:checked + label .bouton-carte i {
+  -webkit-transform: rotate(-360deg);
+          transform: rotate(-360deg);
+}
+
+#conteneur-menu .menu h4 {
   margin-top: 10px;
   margin-bottom: 0px;
   font-family: roboto;
   padding-bottom: 5px;
 }
 
-.menu-entree .carte-entree {
+#conteneur-menu .menu .carte {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   margin-bottom: 15px;
+  cursor: pointer;
 }
 
-.menu-entree .carte-entree .element-entree {
+#conteneur-menu .menu .carte:hover > .bouton-carte {
+  width: 20%;
+  -webkit-transition-duration: 0.5s;
+          transition-duration: 0.5s;
+  -webkit-transition-timing-function: ease;
+          transition-timing-function: ease;
+  opacity: 1;
+}
+
+#conteneur-menu .menu .carte:hover > .bouton-carte i {
+  -webkit-transform: rotate(-360deg);
+          transform: rotate(-360deg);
+  -webkit-transition-duration: 0.5s;
+          transition-duration: 0.5s;
+}
+
+#conteneur-menu .menu .carte:hover > .element-carte {
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+
+#conteneur-menu .menu .carte .element-carte {
   background-color: white;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
@@ -164,20 +285,15 @@ body {
   -webkit-box-shadow: 2px 4px 2px lightgray;
           box-shadow: 2px 4px 2px lightgray;
   overflow: hidden;
-  cursor: pointer;
 }
 
-.menu-entree .carte-entree .element-entree:hover {
-  border-radius: 10px 0px 0px 10px;
-}
-
-.menu-entree .carte-entree .element-entree .prix p {
+#conteneur-menu .menu .carte .element-carte .prix p {
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
 }
 
-.menu-entree .carte-entree .bouton-entree {
+#conteneur-menu .menu .carte .bouton-carte {
   background: #99e2d0;
   -webkit-box-align: center;
       -ms-flex-align: center;
@@ -188,8 +304,7 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  margin-right: -7rem;
-  width: 7rem;
+  width: 0%;
   -webkit-transition-duration: 0.5s;
           transition-duration: 0.5s;
   -webkit-transition-timing-function: ease;
@@ -200,27 +315,11 @@ body {
           box-shadow: 2px 4px 2px lightgray;
 }
 
-.menu-entree .carte-entree .bouton-entree i {
+#conteneur-menu .menu .carte .bouton-carte i {
   background: #F2F2F2;
   padding: 0.5rem;
   color: #99e2d0;
   border-radius: 50%;
-}
-
-.menu-entree .carte-entree .element-entree:hover + .bouton-entree {
-  margin-right: 0;
-  -webkit-transition-duration: 0.5s;
-          transition-duration: 0.5s;
-  -webkit-transition-timing-function: ease;
-          transition-timing-function: ease;
-  opacity: 1;
-}
-
-.menu-entree .carte-entree .element-entree:hover + .bouton-entree i {
-  -webkit-transform: rotate(360deg);
-          transform: rotate(360deg);
-  -webkit-transition-duration: 0.5s;
-          transition-duration: 0.5s;
 }
 
 .bouton-commander {
@@ -257,6 +356,10 @@ body {
 .bouton-commander .commander:hover {
   -webkit-transform: scale(1.15);
           transform: scale(1.15);
+  -webkit-filter: brightness(110%);
+          filter: brightness(110%);
+  -webkit-box-shadow: 5px 5px 5px gray;
+          box-shadow: 5px 5px 5px gray;
 }
 
 .pied-de-page {
@@ -280,8 +383,8 @@ body {
 }
 
 .pied-de-page .fas {
-  margin-right: 5px;
-  font-size: 12px;
+  width: 20px;
+  font-size: 14px;
 }
 
 .pied-de-page .navigation {

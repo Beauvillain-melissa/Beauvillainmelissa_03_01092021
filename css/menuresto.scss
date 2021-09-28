@@ -10,6 +10,17 @@
     font-family: roboto-black;
     src: url(font/Roboto-Black.ttf);
 }
+
+@keyframes fadeIn 
+{
+    0% {
+      opacity: 0;
+    }
+    100% {
+      visibility: visible;
+      opacity: 1;
+    }
+}
 $couleur-noir:#353535;
 $couleur-vertclaire:#99e2d0;
 $couleur-rose:#FF79DA;
@@ -58,6 +69,20 @@ body
         height: 100%;
 }
 
+@for $i from 1 through 10 
+{
+    .carte:nth-child(#{$i}n) {
+        animation-delay: #{$i * 0.3}s;
+    }
+}
+
+.carte {
+    visibility: hidden;
+    animation: 0.5s fadeIn;
+    animation-fill-mode: forwards;
+}
+
+
 #conteneur-menu
 {
     background-color:#F2F2F2;
@@ -70,7 +95,7 @@ body
         display: flex;
         justify-content: space-between;
     }
-    .titre-plat h3
+    .titre h3
     {
         font-family: $policeTexte;
         font-weight: 300;
@@ -88,15 +113,15 @@ body
         font-size: 30px;
         padding-right: 15px;
         margin-top: 10px;
+       transition: transform, 400ms;
+      
         &:hover
         {
-            transition: 400ms;
+            transition: 700ms;
             color: $couleur-rose;
-            transition-duration: 2s;
             font-weight: 900;
         }
     }
-    
     .prix
     {
         display: flex;
@@ -111,11 +136,32 @@ body
            
         }
     }
-}  
-    .menu-entree 
+    
+    .menu
     {
         display: flex;
         flex-direction: column;
+        
+        .input-menu {
+            display: none;
+        }
+        .input-menu:checked {
+            & + label .bouton-carte
+            {
+                width: 20%;
+                opacity: 1;
+            }
+            & + label .element-carte
+            {
+                border-top-right-radius: 0px;
+                border-bottom-right-radius: 0px;
+            }
+            & + label .bouton-carte i
+            {
+                transform: rotate(-360deg);
+            }
+        } 
+
         h4
         {
             margin-top: 10px;
@@ -123,11 +169,31 @@ body
             font-family: $policeTexte ;
             padding-bottom: 5px;
         }
-        .carte-entree
+        
+        .carte
         {
             display: flex;
             margin-bottom: 15px;
-            .element-entree
+            cursor: pointer;
+            &:hover > .bouton-carte
+            {
+                width: 20%;
+                transition-duration: 0.5s;
+                transition-timing-function: ease;
+                opacity: 1;
+            }
+            &:hover > .bouton-carte i
+            {
+                transform: rotate(-360deg);
+                transition-duration: 0.5s;
+            }
+            &:hover > .element-carte
+            {
+                border-top-right-radius: 0px;
+                border-bottom-right-radius: 0px;
+            }
+            
+            .element-carte
             {
                 background-color: white;
                 flex-direction: column;
@@ -138,25 +204,19 @@ body
                 padding-top: 0px;
                 box-shadow: 2px 4px 2px lightgray;
                 overflow: hidden;
-                cursor: pointer;
-                &:hover
-                {
-                    border-radius: 10px 0px 0px 10px;
-                }
                 .prix p {
                     text-overflow: ellipsis;
                     overflow: hidden;
                     white-space: nowrap;
                 }
             }
-            .bouton-entree
+            .bouton-carte
             {
                 background: #99e2d0;
                 align-items: center;
                 display: flex;
                 justify-content: center;
-                margin-right: -7rem;
-                width: 7rem;
+                width: 0%;
                 transition-duration: 0.5s;
 	            transition-timing-function: ease;
                 border-radius: 0px 10px 10px 0px;
@@ -172,24 +232,10 @@ body
                     border-radius: 50%;
                 }
             }
-            .element-entree:hover + .bouton-entree
-            {
-                margin-right: 0;
-                transition-duration: 0.5s;
-                transition-timing-function: ease;
-                opacity: 1;
-                
-                
-               
-            }
-            .element-entree:hover + .bouton-entree i
-            {
-                transform: rotate(360deg);
-	            transition-duration: 0.5s;
-                
-            }
+           
         }
     }
+}
 .bouton-commander
 {
     display: flex;
@@ -213,11 +259,14 @@ body
              &:hover
             {
                 transform: scale(1.15);
+               filter: brightness(110%);
+               box-shadow: 5px 5px 5px gray;
                 
             }
     }
 }  
-
+  
+  
 .pied-de-page
 {
     color: white;
@@ -241,8 +290,8 @@ body
     
     .fas
     {
-        margin-right: 5px;
-        font-size: 12px;
+        width: 20px;
+        font-size: 14px;
     }
     
     .navigation
