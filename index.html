@@ -6,9 +6,12 @@
     <script src="https://kit.fontawesome.com/0b6899dea2.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/style.css" />
     <meta charset="UTF-8">
+    <title>Homyfood</title>
 </head>
 
 <body>
+    <div class=chargement></div>
+    <div class=background-chargement></div>
     <header>
         <div class="logo">
             <h1>ohmyfood</h1>
@@ -17,6 +20,7 @@
             <i class="fas fa-map-marker-alt"></i>
             Paris, Belleville
         </div>
+        
     </header>
     <div id="conteneur-description">
         <div>
@@ -47,18 +51,20 @@
         <div class="titre-resto">
             <h2>Restaurants</h2>
         </div>
-        <div class="carte-resto">
-            <a href="La-palette-du-gout.html">
-                <div class="element-carte">
-                    <span class="nouveau">Nouveau</span>
-                    <img src="image/jay-wennington-N_Y88TWmGwA-unsplash.jpg" alt="">
-                    <div class="description">
-                        <h3>La palette du goût</h3>
-                        <p>Ménilmontant</p>
-                        <i class="far fa-heart"></i>
+        <div id="conteneur-restaurants">
+            <div class="carte-resto">
+                <a href="La-palette-du-gout.html">
+                    <div class="element-carte">
+                        <span class="nouveau">Nouveau</span>
+                        <img src="image/jay-wennington-N_Y88TWmGwA-unsplash.jpg" alt="">
+                        <div class="description">
+                            <h3>La palette du goût</h3>
+                            <p>Ménilmontant</p>
+                            <i class="far fa-heart"></i>
+                        </div>
                     </div>
-                </div>
-            </a>
+                </a>
+            </div>
             <div class="carte-resto">
                 <a href="la-note-enchantee.html">
                     <div class="element-carte">
@@ -71,29 +77,32 @@
                         </div>
                     </div>
                 </a>
-                <div class="carte-resto">
-                    <a href="a-la-francaise.html">
-                        <div class="element-carte">
-                            <img src="image/toa-heftiba-DQKerTsQwi0-unsplash.jpg" alt="">
-                            <div class="description">
-                                <h3>À la Française</h3>
-                                <p>Cité Rouge</p>
-                                <i class="far fa-heart"></i>
-                            </div>
+            </div>
+            <div class="carte-resto">
+                <a href="a-la-francaise.html">
+                    <div class="element-carte">
+                        <img src="image/toa-heftiba-DQKerTsQwi0-unsplash.jpg" alt="">
+                        <div class="description">
+                            <h3>À la Française</h3>
+                            <p>Cité Rouge</p>
+                            <i class="far fa-heart"></i>
                         </div>
-                    </a>
-                    <div class="carte-resto">
-                        <a href="la-delice-des-sens.html">
-                            <div class="element-carte">
-                                <img src="image/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg" alt="">
-                                <div class="description">
-                                    <h3>Le délice des sens</h3>
-                                    <p>Folie-Méricourt</p>
-                                    <i class="far fa-heart"></i>
-                                </div>
-                            </div>
-                        </a>
                     </div>
+                </a>
+            </div>
+            <div class="carte-resto">
+                <a href="la-delice-des-sens.html">
+                    <div class="element-carte">
+                        <img src="image/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg" alt="">
+                        <div class="description">
+                            <h3>Le délice des sens</h3>
+                            <p>Folie-Méricourt</p>
+                            <i class="far fa-heart"></i>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
     </main>
     <footer class="pied-de-page">
         <div class="navigation">
@@ -109,14 +118,14 @@
                     Devenir parteneire</a>
             </p>
 
-            
-                <p>
-                    <a href="#">
+
+            <p>
+                <a href="#">
                     Mentions légales
                 </a>
-                </p>
-            
-            <a href="mailamettre">
+            </p>
+
+            <a href="mailto:homyfood@contact.com"ohmyfood@contact.com>
                 <p>Contact</p>
             </a>
         </div>

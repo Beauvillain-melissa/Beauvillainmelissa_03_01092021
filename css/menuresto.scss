@@ -87,19 +87,40 @@ body
 {
     background-color:#F2F2F2;
     border-radius: 45px 45px 0px 0px;
-    transform: translateY(-50px);
+    margin-top: -50px
+    ;
     position: relative;
     padding: 20px;
+    #conteneur-carte {
+        display: flex;
+        flex-direction: column;
+    }
     .titre-resto
     {
         display: flex;
         justify-content: space-between;
     }
-    .titre h3
+    .titre
     {
-        font-family: $policeTexte;
-        font-weight: 300;
+        position: relative;
+            &::before
+            {
+                background: #99E2D0;
+                height: 3px;
+                width: 35px;
+                position: absolute;
+                bottom: 10px;
+                content: ""
+              
+            }
+        h3 
+        {
+            font-family: $policeTexte;
+            font-weight: 300;
+            
+        }
     }
+    
     h2
     {
         font-family:$policeTitre;
@@ -139,9 +160,9 @@ body
     
     .menu
     {
+        flex: 1;
         display: flex;
         flex-direction: column;
-        
         .input-menu {
             display: none;
         }
@@ -299,5 +320,27 @@ body
         display: flex;
         flex-direction: column;
         padding-left: 25px;
+    }
+}
+@media screen and (min-width:769px )
+{
+    #conteneur-menu
+    {
+        #conteneur-carte {
+            display: flex;
+            flex-direction: row;
+
+            .menu {
+                padding: 10px 20px;
+            }
+        }
+    }
+    .pied-de-page
+    {
+        .navigation
+        {
+            display: flex;
+            text-align: center;
+        }
     }
 }

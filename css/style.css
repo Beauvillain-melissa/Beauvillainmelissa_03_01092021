@@ -40,6 +40,46 @@ header h1 {
   height: 100%;
 }
 
+.chargement {
+  /*Creation du loader*/
+  border: 10px solid #f3f3f3;
+  border-top: 10px solid pink;
+  border-bottom: 10px solid blue;
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  -webkit-animation: spin 3s linear infinite;
+  animation: spin 3s linear infinite;
+  /* placement loader au milieux de la page*/
+  margin: auto;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  position: fixed;
+}
+
+/*animation du loader*/
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
 body {
   margin: 0px;
 }
@@ -190,27 +230,39 @@ body {
   padding-left: 20px;
 }
 
-.list-resto .element-carte {
-  padding: 20px;
-  position: relative;
-}
-
-.list-resto .element-carte .nouveau {
-  background-color: #99e2d0;
-  color: #1b6150;
-  padding: .5rem;
-  border-radius: 3px;
-  position: absolute;
-  right: 40px;
-  top: 30px;
-  font-weight: bold;
-  font-family: roboto;
-}
-
-.carte-resto img {
+.list-resto #conteneur-restaurants {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.list-resto #conteneur-restaurants .carte-resto {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  height: 350px;
+}
+
+.list-resto .element-carte {
+  padding: 20px;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.list-resto .element-carte img {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
   max-width: 100%;
   max-height: 100%;
   -o-object-fit: cover;
@@ -218,7 +270,10 @@ body {
   border-radius: 20px 20px 0px 0px;
 }
 
-.description {
+.list-resto .element-carte .description {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -233,17 +288,29 @@ body {
   padding-left: 10px;
 }
 
-.description h3 {
+.list-resto .element-carte .description h3 {
   margin: 0;
   padding-left: 10px;
   padding-top: 15px;
 }
 
-.description p {
+.list-resto .element-carte .description p {
   margin: 0;
   padding-left: 10px;
   padding-top: 5px;
   padding-bottom: 17px;
+}
+
+.list-resto .element-carte .nouveau {
+  background-color: #99E2D0;
+  color: #1b6150;
+  padding: .5rem;
+  border-radius: 3px;
+  position: absolute;
+  right: 40px;
+  top: 30px;
+  font-weight: bold;
+  font-family: roboto;
 }
 
 .far {
@@ -300,5 +367,78 @@ body {
       -ms-flex-direction: column;
           flex-direction: column;
   padding-left: 25px;
+}
+
+.background-chargement {
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  background-color: #000;
+  position: fixed;
+  background: -webkit-gradient(linear, left top, left bottom, from(#FF79DA), to(#9356DC));
+  background: linear-gradient(#FF79DA, #9356DC);
+  -webkit-filter: brightness(140%);
+          filter: brightness(140%);
+  -webkit-animation: fadeOut 0.5s 2s forwards;
+  animation: fadeOut 0.5s 2s forwards;
+}
+
+.chargement {
+  /*Creation du loader*/
+  border: 10px solid #f3f3f3;
+  border-top: 10px solid #FF79DA;
+  border-bottom: 10px solid #99E2D0;
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  z-index: 15;
+  -webkit-animation: spin 2s linear infinite, fadeOut 0.5s 2s forwards;
+  animation: spin 2s linear infinite, fadeOut 0.5s 2s forwards;
+  /* placement loader au milieux de la page*/
+  margin: auto;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+/*animation du loader*/
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    visibility: hidden;
+    opacity: 0;
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    visibility: hidden;
+    opacity: 0;
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .list-resto #conteneur-restaurants {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
 }
 /*# sourceMappingURL=style.css.map */
